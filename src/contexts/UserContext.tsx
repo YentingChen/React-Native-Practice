@@ -33,3 +33,5 @@ export const Provider: React.FC<Props> = ({ children }) => {
   };
   
 export default Context;
+
+//reference: https://javascript.plainenglish.io/using-typescript-in-react-context-3912472b933
