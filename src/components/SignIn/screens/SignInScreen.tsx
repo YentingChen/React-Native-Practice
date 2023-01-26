@@ -1,20 +1,24 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React, {useContext, useState} from "react";
 import {View, Text, TextInput, TouchableOpacity} from "react-native";
-import Context from "../../contexts/UserContext";
-import { RootStackParamList } from "../Navigator";
+import Context, { User } from "../../../contexts/UserContext";
+import { SignInStackParamList } from "../../Navigator";
 
-type SignInProps = NativeStackScreenProps<RootStackParamList, 'SignIn'>;
+type SignInProps = NativeStackScreenProps<SignInStackParamList, 'SignIn'>;
 
 const SignInScreen = ({route, navigation}: SignInProps) => {
 
-    const user = useContext(Context)
+    const userContext = useContext(Context)
   
     const [text, setText] = useState("");
   
     function signIn(name: string) {
-      user.setUsername(name)
-      navigation.navigate('Home')
+      let user: User = {
+        name: name,
+        id: name
+      }
+      userContext.setUsername(user)
+      navigation.navigate('SignIn')
     }
   
     return (
