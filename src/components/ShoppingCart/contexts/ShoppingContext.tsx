@@ -1,20 +1,25 @@
 import { createContext, useState } from "react";
-import { Props } from "./UserContext";
+import { Props } from "../../SignIn/contexts/UserContext";
 
 interface ShpoppingContextProps {
-    items: Array<string>
-    setItems(item: string): void
+    items: Array<ShoppingItem>
+    setItems(item: ShoppingItem): void
+}
+
+type ShoppingItem = {
+    name: string,
+    quantity: string
 }
 
 const ShoppingContext = createContext<ShpoppingContextProps>({
-    items: Array<string>(),
+    items: Array<ShoppingItem>(),
     setItems: () => {}
 });
 
 export const ShoppingProvider: React.FC<Props> = ({children}) => {
-    const [items, setItems] = useState(Array<string>())
+    const [items, setItems] = useState(Array<ShoppingItem>())
 
-    function updateItems(item: string) {
+    function updateItems(item: ShoppingItem) {
         
         setItems([...items, item])
     }

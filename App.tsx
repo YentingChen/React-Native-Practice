@@ -2,8 +2,8 @@
 
 import React, { useContext, useState } from 'react';
 import Navigator from './src/components/Navigator';
-import { ShoppingProvider } from './src/contexts/ShoppingContext';
-import { Provider } from './src/contexts/UserContext';
+import { ShoppingProvider } from './src/components/ShoppingCart/contexts/ShoppingContext';
+import { Provider } from './src/components/SignIn/contexts/UserContext';
 
 const App = () => {
   return (

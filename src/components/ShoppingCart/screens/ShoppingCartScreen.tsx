@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react"
 import {View, SafeAreaView, Text, Touchable, TouchableOpacity} from "react-native"
 import { FlatList, TextInput } from "react-native-gesture-handler"
-import { onChange } from "react-native-reanimated"
-import ShoppingContext, { ShoppingProvider } from "../../contexts/ShoppingContext"
+// import { onChange } from "react-native-reanimated"
+import ShoppingContext, { ShoppingProvider } from "../contexts/ShoppingContext"
 
 const ShoppingCartScreen = () => {
 

@@ -1,23 +1,27 @@
 import { createContext, useState } from "react";
 
 interface ContextProps {
-    name: string;
-    setUsername(user: string): void;
+    name: User | null;
+    setUsername(user: User | null): void;
 }
 const Context = createContext<ContextProps>({
-    name: " ",
+    name: null,
     setUsername: () => {},
 });
 
+export type User = {
+    name: string, 
+    id: string
+}
 
-interface Props {
+export interface Props {
      children?: React.ReactNode;
 }
 
 export const Provider: React.FC<Props> = ({ children }) => {
-    const [user, setUser] = useState<string>("");
-    const setUserName = (name: string) => {
-        setUser(name)
+    const [user, setUser] = useState<User | null>(null);
+    const setUserName = (user: User | null) => {
+        setUser(user)
     }
     
     return (
