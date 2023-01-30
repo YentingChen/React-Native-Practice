@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ShoppingCartScreen from './ShoppingCart/screens/ShoppingCartScreen';
 import CoffeeListScreen from './CoffeeList/CoffeeListScreen';
 import SignInScreens from './SignInNavigator';
+import ChangeThemeScreen from './ChangeTheme/ChangeThemeScreen';
 
 const Navigator = () => {
 
@@ -16,6 +17,7 @@ const Navigator = () => {
           <Tab.Screen name="SignIn" component={SignInScreens} />
           <Tab.Screen name="ShoppingCart" component={ShoppingCartScreen} />
           <Tab.Screen name="CoffeeList" component={CoffeeListScreen}/>
+          <Tab.Screen name="ChangeTheme" component={ChangeThemeScreen}/>
         </Tab.Navigator>
       </NavigationContainer>
   
@@ -26,6 +28,7 @@ export type TabParamList = {
   SignIn: undefined;
   ShoppingCart: undefined;
   CoffeeList: undefined;
+  ChangeTheme: undefined;
 };
 
 export default Navigator;
